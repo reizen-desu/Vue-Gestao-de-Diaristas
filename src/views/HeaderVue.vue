@@ -39,7 +39,7 @@
 
           <!-- Mostar os items de registro/login caso ainda não tenha entrado no sistema -->
           <!-- <?php if (!isset($_SESSION['tipo_usuario'])) { ?> -->
-          <li class="nav-item">
+          <li class="nav-item" v-if="logged">
             <button
               class="mx-2 btn btn-outline-secondary"
               data-bs-toggle="modal"
@@ -48,7 +48,7 @@
               Registar
             </button>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" v-if="logged">
             <!-- <a href="/login.html" class="btn btn-outline-primary">Login</a> -->
             <button
               class="btn btn-primary"
@@ -59,21 +59,27 @@
             </button>
           </li>
 
-          <!-- Caso esteja logado, mostrar o nome e outras opções 
-                <?php } else { ?>
-                <li class="nav-item dropdown dropstart">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Perfil
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">Meu perfil</a></li>
-                        <li><a class="dropdown-item" href="#">Notificações</a></li>
-                        <li><a class="dropdown-item btn-danger text-danger" href="#"
-                                onclick="function hi(){window.location = 'controller/logout.php'};hi()">Sair</a>
-                        </li>
-                    </ul>
-                </li> -->
+          <!-- Caso esteja logado, mostrar o nome e outras opções -->
+
+          <li class="nav-item dropdown dropstart" v-if="!logged">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDarkDropdownMenuLink"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Perfil
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="#">Meu perfil</a></li>
+              <li><a class="dropdown-item" href="#">Notificações</a></li>
+              <li>
+                <a class="dropdown-item btn-danger text-danger" href="#" op>Sair</a>
+              </li>
+            </ul>
+          </li>
           <!-- <li class="nav-item">
                     <button class="btn btn-primary" data-bs-toggle="modal"
                         data-bs-target="#login">Notifications</button>
@@ -86,19 +92,26 @@
   </nav>
 
   <FormRegister />
+  <FormLogin />
 </template>
 
 <script>
 import FormRegister from "./FormRegister.vue";
+import FormLogin from "./FormLogin.vue";
 export default {
   name: "HeaderVue",
   components: {
     FormRegister,
+    FormLogin,
   },
   data() {
     return {
       title: "HeaderVue",
     };
+  },
+
+  props: {
+    logged: Boolean,
   },
 };
 </script>
