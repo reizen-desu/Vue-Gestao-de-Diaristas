@@ -10,12 +10,14 @@
 
 <script>
 import HeaderVue from "./views/HeaderVue.vue";
+import TelaVisitante from "./views/TelaVisitante.vue";
 import FooterVue from "./views/FooterVue.vue";
 
 export default {
   name: "App",
   components: {
     HeaderVue,
+    TelaVisitante,
     FooterVue,
   },
 
