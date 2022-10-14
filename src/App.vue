@@ -1,9 +1,13 @@
 <template>
-  <HeaderVue :logged="logged" />
+  <HeaderVue :logged="logged" @logout="logged = !logged" />
   <!-- I can later add the bg-image class -->
   <div class="content">
-    <div :logged="logged"></div>
-    <router-view />
+    <div v-if="logged">
+      <TelaVisitante />
+    </div>
+    <div v-else>
+      <router-view />
+    </div>
   </div>
   <FooterVue />
 </template>
@@ -23,7 +27,7 @@ export default {
 
   data() {
     return {
-      logged: true,
+      logged: false,
     };
   },
 };
