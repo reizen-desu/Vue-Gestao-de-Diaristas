@@ -1,0 +1,121 @@
+{
+    "diaristas": [
+        {
+            "id": 1,
+            "nome": "Maria",
+            "apelido": "Da Graça",
+            "contacto": "843948359",
+            "morada": "Av. 25 de Abril",
+            "sexo": "F",
+            "descricao": "Sou uma pessoa responsável e dedicada",
+            "data_nascimento": "1995-01-01",
+            "avatar": "https://randomuser.me/api/portraits/women/1.jpg",
+            "publicar": true,
+            "especialidade": ["Cozinheira", "Limpeza"],
+            "ultimo_acesso": "2022-10-09"
+        },
+        {
+            "id": 2,
+            "nome": "João",
+            "apelido": "Da Silva",
+            "contacto": "87843751",
+            "morada": "Av. 25 de Julho",
+            "sexo": "M",
+            "descricao": "Flexivel e cheio de vigor",
+            "data_nascimento": "1995-01-01",
+            "avatar": "https://randomuser.me/api/portraits/men/1.jpg",
+            "publicar": true,
+            "especialidade": ["Detoxificação", "Limpeza"],
+            "ultimo_acesso": "2022-10-11"
+        },
+        {
+            "id": 3,
+            "nome": "Ana",
+            "apelido": "Da Costa",
+            "contacto": "843948359",
+            "morada": "Av. de Angola",
+            "sexo": "F",
+            "descricao": "Sou uma pessoa responsável e dedicada",
+            "data_nascimento": "1995-01-01",
+            "avatar": "https://randomuser.me/api/portraits/women/3.jpg",
+            "publicar": true,
+            "ultimo_acesso": "2022-09-24"
+        },
+        {
+            "id": 4,
+            "nome": "José",
+            "apelido": "Tivane",
+            "contacto": "843948359",
+            "morada": "Bairro do Aeroporto",
+            "sexo": "M",
+            "descricao": "Sou uma pessoa responsável e dedicada",
+            "data_nascimento": "1995-01-01",
+            "avatar": "https://randomuser.me/api/portraits/men/4.jpg",
+            "publicar": true,
+            "ultimo_acesso": "2022-09-29"
+        }
+
+    ],
+
+    "notificacoes": [
+        {
+            "id": 1,
+            "titulo": "Nova diarista",
+            "descricao": "A diarista Maria da Graça acabou de se registar",
+            "data": "2021-01-01",
+            "lida": false
+        },
+        {
+            "id": 2,
+            "titulo": "Nova diarista",
+            "descricao": "A diarista João da Silva acabou de se registar",
+            "data": "2021-01-01",
+            "lida": false
+        },
+        {
+            "id": 3,
+            "titulo": "Nova diarista",
+            "descricao": "A diarista Ana da Costa acabou de se registar",
+            "data": "2021-01-01",
+            "lida": false
+        },
+        {
+            "id": 4,
+            "titulo": "Nova diarista",
+            "descricao": "A diarista José Tivane acabou de se registar",
+            "data": "2021-01-01",
+            "lida": false
+        }
+    ],
+
+    "mensagens": [
+        {
+            "id": 1,
+            "titulo": "Nova mensagem",
+            "descricao": "A diarista Maria da Graça acabou de enviar uma mensagem",
+            "data": "2021-01-01",
+            "lida": false
+        },
+        {
+            "id": 2,
+            "titulo": "Nova mensagem",
+            "descricao": "A diarista João da Silva acabou de enviar uma mensagem",
+            "data": "2021-01-01",
+            "lida": false
+        },
+        {
+            "id": 3,
+            "titulo": "Nova mensagem",
+            "descricao": "A diarista Ana da Costa acabou de enviar uma mensagem",
+            "data": "2021-01-01",
+            "lida": false
+        },
+        {
+            "id": 4,
+            "titulo": "Nova mensagem",
+            "descricao": "A diarista José Tivane acabou de enviar uma mensagem",
+            "data": "2021-01-01",
+            "lida": false
+        }
+    ]
+}
