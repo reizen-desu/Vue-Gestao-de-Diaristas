@@ -1,7 +1,8 @@
 <template>
-  <HeaderVue />
+  <HeaderVue :logged="logged" />
   <!-- I can later add the bg-image class -->
   <div class="content">
+    <div :logged="logged"></div>
     <router-view />
   </div>
   <FooterVue />
@@ -16,6 +17,12 @@ export default {
   components: {
     HeaderVue,
     FooterVue,
+  },
+
+  data() {
+    return {
+      logged: true,
+    };
   },
 };
 </script>
