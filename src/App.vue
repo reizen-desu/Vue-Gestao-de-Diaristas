@@ -9,16 +9,12 @@
 
 <script>
 import HeaderVue from "./views/HeaderVue.vue";
-// import NavBar from './views/NavBar.vue'
-// import FormRegister from './views/FormRegister.vue'
 import FooterVue from "./views/FooterVue.vue";
 
 export default {
   name: "App",
   components: {
     HeaderVue,
-    // Navbar: NavBar,
-    // FormRegister,
     FooterVue,
   },
 };
