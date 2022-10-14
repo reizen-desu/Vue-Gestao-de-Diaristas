@@ -39,7 +39,7 @@
 
           <!-- Mostar os items de registro/login caso ainda não tenha entrado no sistema -->
           <!-- <?php if (!isset($_SESSION['tipo_usuario'])) { ?> -->
-          <li class="nav-item" v-if="logged">
+          <li class="nav-item" v-if="!logged">
             <button
               class="mx-2 btn btn-outline-secondary"
               data-bs-toggle="modal"
@@ -48,7 +48,7 @@
               Registar
             </button>
           </li>
-          <li class="nav-item" v-if="logged">
+          <li class="nav-item" v-if="!logged">
             <!-- <a href="/login.html" class="btn btn-outline-primary">Login</a> -->
             <button
               class="btn btn-primary"
@@ -61,7 +61,7 @@
 
           <!-- Caso esteja logado, mostrar o nome e outras opções -->
 
-          <li class="nav-item dropdown dropstart" v-if="!logged">
+          <li class="nav-item dropdown dropstart" v-if="logged">
             <a
               class="nav-link dropdown-toggle"
               href="#"
@@ -76,7 +76,13 @@
               <li><a class="dropdown-item" href="#">Meu perfil</a></li>
               <li><a class="dropdown-item" href="#">Notificações</a></li>
               <li>
-                <a class="dropdown-item btn-danger text-danger" href="#" op>Sair</a>
+                <a
+                  @click="$emit('logout')"
+                  class="dropdown-item btn-danger text-danger"
+                  href="#"
+                  op
+                  >Sair</a
+                >
               </li>
             </ul>
           </li>
@@ -111,7 +117,10 @@ export default {
   },
 
   props: {
-    logged: Boolean,
+    logged: {
+      type: Boolean,
+      default: false,
+    },
   },
 };
 </script>
