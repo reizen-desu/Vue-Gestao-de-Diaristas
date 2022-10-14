@@ -38,7 +38,15 @@
               />
               <label for="password">Senha</label>
             </div>
-            <!-- <button type="submit" class="btn btn-primary">Entrar</button> -->
+            <div class="form-group row">
+              <div class="col-lg-6 offset-md-4">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="remember" /> Lembrar de mim
+                  </label>
+                </div>
+              </div>
+            </div>
           </form>
         </div>
         <!-- modal body -->
