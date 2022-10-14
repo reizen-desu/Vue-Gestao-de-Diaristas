@@ -1,9 +1,110 @@
 <template>
-  <div>
-    <h1>Pagina Inicial</h1>
+  <div class="landing-page">
+    <p class="lead text-center">Alguns serviços que os diaristas registados fazem</p>
+    <!-- ======= Servicos prestados ======= -->
+    <section id="featured-services" class="featured-services">
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon"><i class="bx bxl-dribbble"></i></div>
+              <h4 class="title"><a href="">Limpeza Básica</a></h4>
+              <p class="description">
+                Remoção de pó e resíduos, manutenção e organização dos ambientes,
+                higienização seca ou molhada de cozinha e banheiros.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <h4 class="title"><a href="">Pré mudança</a></h4>
+              <p class="description">
+                Antes de mudar para o local que você chamara de seu lar. E preciso fazer
+                uma limpeza minuciosa, retirando a poeira, sujeira causados pelo tempo que
+                o local se encontrava vazio. Retirar gordura ou resíduos deixados por uso
+                anterior do local, você pode contar com a Faxina da Hora, pois temos
+                profissionais dedicados e com destreza para o serviço.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+              <div class="icon"><i class="bx bx-tachometer"></i></div>
+              <h4 class="title"><a href="">Pós Obra</a></h4>
+              <p class="description">
+                Acabou de realizar a tão sonhada obra? Mudou aquele cantinho que a muito
+                você queria deixar bonito? E agora precisa de algum que cuide dos detalhes
+                da limpeza, removendo toda a poeira e deixando tudo brilhado. Pode contar
+                com a gente, disponibilizamos profissionais ou equipes especializadas para
+                você não se preocupar com a limpeza.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+              <div class="icon"><i class="bx bx-world"></i></div>
+              <h4 class="title"><a href="">Faxina</a></h4>
+              <p class="description">
+                Limpeza mais detalhada dos ambientes, remoção de gordura de cozinha e
+                banheiros, nesse serviço a um esforço e empenho de tempo maior por parte
+                da profissional, e sempre bom que você informe a profissional qual será a
+                sua demanda maior para que a mesma comece por esse ambiente.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Featured Services Section -->
   </div>
 </template>
 <script>
 export default {};
 </script>
-<style></style>
+<style scoped>
+a {
+  color: #106eea;
+  text-decoration: none;
+}
+
+div {
+  font-family: "Open Sans", sans-serif;
+}
+
+.landing-page {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans",
+    "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.featured-services .icon-box {
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 0 29px 0 rgb(68 88 144 / 12%);
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+  z-index: 1;
+}
+.featured-services title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+featured-services .title a {
+  color: #111;
+}
+
+.featured-services .description {
+  font-size: 14px;
+  line-height: 25px;
+  margin-bottom: 0;
+}
+</style>
