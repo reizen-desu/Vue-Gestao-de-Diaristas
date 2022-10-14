@@ -2,7 +2,10 @@
   <h4>
     O sistema tem como objectivo tornar fácil a procura de uma diarista, assim
     economizando tempo das pessoas que procuram por uma diarista e criar oportunidades de
-    trabalho
+    trabalho.
+    <br /><br />
+    Aqui você encontra perfis de diaristas que estão a procura de um lugar para fazer seus
+    trabalhos.
   </h4>
 </template>
 <script>
