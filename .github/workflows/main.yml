@@ -9,6 +9,6 @@ jobs:
     - id: Build-Vue
       uses: xRealNeon/VuePagesAction@1.0.1
       with:
-        username: 'Vue-Gestao-de-Diaristas'
-        reponame: 'reizen-desu'
+        username: 'reizen-desu'
+        reponame: 'Vue-Gestao-de-Diaristas'
         token: ${{ secrets.GITHUB_TOKEN }}
