@@ -4,38 +4,21 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="modal-title">Login</h5>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          ></button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
 
         <div class="modal-body">
           <p class="text-secondary">Preencha os campos abaixo para entrar</p>
 
-          <form id="loginForm" action="controller/loginController.php" method="POST">
+          <form id="loginForm" @submit.prevent="login">
             <div class="form-floating mb-2">
-              <input
-                type="email"
-                name="email"
-                class="form-control"
-                id="email"
-                placeholder="nome@exemplo.com"
-                required
-              />
+              <input type="email" name="email" class="form-control" id="email" v-model="email"
+                placeholder="nome@exemplo.com" required />
               <label for="email">Email</label>
             </div>
             <div class="form-floating">
-              <input
-                type="password"
-                class="form-control"
-                id="password"
-                name="password"
-                placeholder="Password"
-                required
-              />
+              <input type="password" class="form-control" id="password" name="password" v-model="password"
+                placeholder="Password" required />
               <label for="password">Senha</label>
             </div>
             <div class="form-group row">
@@ -65,6 +48,50 @@
   </section>
 </template>
 <script>
-export default {};
+import axios from 'axios'
+
+export default {
+  name: "FormLogin",
+
+
+  data() {
+    return {
+      email: null,
+      password: null,
+      error: null,
+    };
+  },
+
+  methods: {
+    login() {
+
+      // const formData = new FormData();
+      // formData.append('email', this.email);
+      // formData.append('senha', this.password);
+      // headers: {
+      //   "Content-Type": "multipart/form-data",
+      // }
+
+      axios
+        .post("http://localhost:8000/api/diaristas/login", {
+          email: this.email,
+          senha: this.password,
+        })
+
+        .then((response) => {
+          console.log("Logado com sucesso");
+          console.log(response);
+          this.$store.dispatch("login", response.data.data);
+        })
+        .catch((error) => {
+          console.log("Falha ao logar");
+          console.log(error);
+        });
+    },
+  },
+};
+
 </script>
-<style></style>
+<style>
+
+</style>

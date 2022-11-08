@@ -12,20 +12,12 @@
     </div>
 
     <div class="row d-flex mb-5">
-      <div
-        class="col-10 mx-auto col-md-4"
-        v-for="diarista in diaristas"
-        :key="diarista.id"
-      >
+      <div class="col-10 mx-auto col-md-4" v-for="diarista in diaristas" :key="diarista.id">
         <div class="my-3 card card-body shadow p-4">
           <div class="row align-items-center d-flex text-md-center text-lg-start">
             <!-- Avatar -->
             <div class="mx-auto h-16 w-16">
-              <img
-                :src="diarista.avatar"
-                :alt="diarista.nome"
-                class="card-img-top img-cover shadow-sm"
-              />
+              <img :src="diarista.foto_usuario" :alt="diarista.nome" class="card-img-top img-cover shadow-sm" />
             </div>
 
             <!-- Nome -->
@@ -42,12 +34,12 @@
                     <i class="fa fa-address-book"></i>
                     Contacto
                   </td>
-                  <td class="text-black-80">{{ diarista.contacto }}</td>
+                  <td class="text-black-80">{{ diarista.telefone }}</td>
                 </tr>
                 <tr>
                   <td class="text-primary text-end">
                     <i class="fa fa-arrow"></i>
-                    Moarada
+                    Morada
                   </td>
                   <td class="text-black-80">{{ diarista.morada }}</td>
                 </tr>
@@ -69,18 +61,16 @@
             </table>
           </div>
           <p class="card-text">
-            <small class="text-muted"
-              >Último visto em {{ diarista.ultimo_acesso }}
+            <small class="text-muted">Membro desde {{ diarista.created_at }}
             </small>
           </p>
+
           <div class="btn-group">
-            <a href="http://localhost:3000/diaristas/2" class="btn btn-primary"
-              >Requisitar</a
-            >
-            <a href="diarista.php?id=<?= $diarista['id'] ?>" class="btn">
-              <!-- <? $diaristas['likes'] ?>Likes -->
-            </a>
+            <a :href="'http://localhost:8000/visitante/solicitacoes/' + diarista.id"
+              class='btn btn-primary'>Requisitar</a>
+            <!-- <a href="" class="btn">X likes</a> -->
           </div>
+
         </div>
       </div>
     </div>
@@ -92,6 +82,8 @@
   </div>
 </template>
 <script>
+import axios from "axios";
+
 export default {
   name: "TelaVisitante",
   data() {
@@ -102,12 +94,16 @@ export default {
   },
 
   created() {
-    fetch("http://localhost:3000/diaristas")
+    axios
+      .get("http://localhost:8000/api/diaristas")
       .then((response) => {
-        return response.json();
+        console.log("Dados recebidos com sucesso");
+        this.diaristas = response.data.data;
+        console.log(response);
       })
-      .then((data) => {
-        this.diaristas = data;
+      .catch((error) => {
+        console.log("Erro ao receber dados");
+        console.log(error);
       });
   },
 };
