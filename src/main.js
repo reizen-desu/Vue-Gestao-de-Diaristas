@@ -1,11 +1,10 @@
-// import * as Vue from "vue";
 import { createApp } from "vue";
-import { createStore } from "vuex";
+import { createPinia } from "pinia";
 import App from "./App.vue";
 import router from "./router";
 // import axios from "axios";
-import VueSweetalert2 from 'vue-sweetalert2';
-import 'sweetalert2/dist/sweetalert2.min.css';
+import VueSweetalert2 from "vue-sweetalert2";
+import "sweetalert2/dist/sweetalert2.min.css";
 
 // Import externall bootstrap versions
 import "./assets/styles/fontawesome.min.css";
@@ -20,22 +19,9 @@ import "bootstrap";
 // Vue.prototype.$http = axios;
 // createApp(App).use(router).mount("#app");
 
-// Create a new store instance.
-const store = createStore({
-	state() {
-		return {
-			count: 0,
-		};
-	},
-	mutations: {
-		increment(state) {
-			state.count++;
-		},
-	},
-});
-
+const pinia = createPinia();
 const app = createApp(App);
 app.use(router);
-app.use(store);
+app.use(pinia);
 app.use(VueSweetalert2);
 app.mount("#app");
