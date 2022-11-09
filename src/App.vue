@@ -3,7 +3,8 @@
   <!-- I can later add the bg-image class -->
   <div class="content">
     <div v-if="logged">
-      <TelaVisitante />
+      <h1>Logged in</h1>
+      <router-view />
     </div>
     <div v-else>
       <router-view />
@@ -14,14 +15,13 @@
 
 <script>
 import HeaderVue from "./views/HeaderVue.vue";
-import TelaVisitante from "./views/TelaVisitante.vue";
 import FooterVue from "./views/FooterVue.vue";
 
 export default {
   name: "App",
   components: {
     HeaderVue,
-    TelaVisitante,
+    // TelaVisitante,
     FooterVue,
   },
 
