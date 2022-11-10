@@ -83,6 +83,7 @@
 </template>
 <script>
 import axios from "axios";
+import { useToast } from "vue-toastification";
 
 export default {
   name: "TelaVisitante",
@@ -94,16 +95,34 @@ export default {
   },
 
   created() {
+    {
+      useToast()("Aguarde enquanto as diaristas são carregadas!", {
+        position: "bottom-left",
+        timeout: 2000,
+        action: {
+          text: "X",
+          onClick: (e, toastObject) => {
+            toastObject.goAway(0);
+          },
+        },
+      });
+    }
     axios
       .get("http://localhost:8000/api/diaristas")
       .then((response) => {
         console.log("Dados recebidos com sucesso");
-        this.diaristas = response.data.data;
+        useToast().success("Diaristas carregadas com sucesso!", {
+          timeout: 3500,
+        }),
+          this.diaristas = response.data.data;
         console.log(response);
       })
       .catch((error) => {
         console.log("Erro ao receber dados");
-        console.log(error);
+        useToast().error("Erro aos carregador as diaristas!", {
+          timeout: 3500,
+        }),
+          console.log(error);
       });
   },
 };
