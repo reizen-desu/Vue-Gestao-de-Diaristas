@@ -5,11 +5,11 @@
   </div>
 
   <p class="text-secondary">Preencha os campos abaixo para se registrar</p>
-  <form action="controller/registerController.php" method="POST">
+  <form @submit.prevent="register">
     <div class="row">
       <div class="form-group col">
         <div class="form-floating">
-          <input type="text" class="form-control" name="nome" id="nome_diarista" placeholder="Nome" required />
+          <input type="text" class="form-control" name="nome" v-model="nome" placeholder="Nome" required />
           <label for="nome" class="form-label">Nome</label>
         </div>
         <!-- <input type="text" class="form-control" id="nome" placeholder="Introduza seu nome" pattern="[^0-9]+" required> -->
@@ -17,7 +17,7 @@
 
       <div class="form-group col">
         <div class="form-floating">
-          <input type="text" class="form-control" name="apelido" placeholder="Apelido" required />
+          <input type="text" class="form-control" name="apelido" v-model="apelido" placeholder="Apelido" required />
           <label for="apelido" class="form-label">Apelido</label>
         </div>
         <!-- <input type="text" class="form-control" id="apelido" placeholder="Introduza seu apelido" pattern="[^0-9]+" required> -->
@@ -27,8 +27,8 @@
     <br />
 
     <div class="form-floating">
-      <input type="email" class="form-control" id="email_diarista" name="email" placeholder="Introduza seu email"
-        required />
+      <input type="email" v-model="email" class="form-control" id="email_diarista" name="email"
+        placeholder="Introduza seu email" required />
       <label for="email" class="form-label">Email</label>
     </div>
 
@@ -36,8 +36,8 @@
     <div class="row">
       <div class="form-group col">
         <label for="password_diarista">Senha</label>
-        <input type="password" class="form-control" id="password_diarista" name="password_diarista" placeholder="Senha"
-          onchange="validarSenhaDiarista();" required />
+        <input type="password" v-model="senha" class="form-control" id="password_diarista" name="password_diarista"
+          placeholder="Senha" onchange="validarSenhaDiarista();" required />
       </div>
 
       <div class="form-group col">
@@ -54,12 +54,12 @@
       <!-- <label for="publicar">Sexo: </label> -->
 
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="sexo" value="M" id="sexo1" />
+        <input class="form-check-input" v-model="sexo" type="radio" name="sexo" value="M" id="sexo1" />
         <label class="form-check-label" for="sexo1"> Masculino </label>
       </div>
 
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="sexo" value="F" id="sexo2" />
+        <input class="form-check-input" v-model="sexo" type="radio" name="sexo" value="F" id="sexo2" />
         <label class="form-check-label" for="sexo2"> Feminimo </label>
       </div>
     </div>
@@ -68,20 +68,20 @@
       <label for="data_nascimento" class="col-5 col-form-label">Data de nascimento</label>
       <div class="col-6">
         <div class="input-group date">
-          <input type="date" class="form-control" name="data_nascimento" id="data_nascimento" />
+          <input type="date" v-model="data_nascimento" class="form-control" name="data_nascimento"
+            id="data_nascimento" />
         </div>
       </div>
     </div>
 
     <div class="form-group">
       <label for="nif">Contacto</label>
-      <input type="digit" class="form-control" id="contacto_diarista" name="contacto" placeholder="84 0000 000"
-        required />
+      <input type="digit" class="form-control" v-model="telefone" name="telefone" placeholder="84 0000 000" required />
     </div>
 
     <div class="form-group">
       <label for="morada">Morada</label>
-      <input type="text" class="form-control" id="morada_diarista" name="morada" placeholder="Introduza o seu bairro" />
+      <input type="text" class="form-control" v-model="morada" name="morada" placeholder="Introduza o seu bairro" />
     </div>
 
     <!-- <label for="especialidade">Escolha sua especialidade(s)</label> -->
@@ -130,13 +130,13 @@
     <br /><br />
 
     <div class="form-floating">
-      <textarea name="descricao" id="descricao" cols="30" rows="10" class="form-control"></textarea>
+      <textarea name="descricao" v-model="descricao" cols="30" rows="10" class="form-control"></textarea>
       <label for="descricao">Breve descrição sobre você (experiência de trabalho)</label>
     </div>
 
     <!-- add user-type=diarista to send to php code -->
     <br />
-    <div class="form-check">
+    <!-- <div class="form-check">
       <label for="is_public" data-bs-toggle="tooltip"
         title="Você pode tornar o seu perfil público logo após o registro, assim os outros usuários terão como encontrá-lo.">Pretende
         publicar seu perfil na página?</label>
@@ -154,7 +154,7 @@
           Não
         </label>
       </div>
-    </div>
+    </div> -->
     <hr />
     <div class="d-grid gap-2 col-6 mx-auto">
       <button type="submit" name="registar_diarista" class="btn btn-primary btn-block">
@@ -164,7 +164,47 @@
   </form>
 </template>
 <script>
-export default {};
+import { useToast } from "vue-toastification";
+import axios from "axios";
+export default {
+  name: "RegistarDiarista",
+  data() {
+    return {
+      form: {
+        nome: "",
+        apelido: "",
+        email: "",
+        senha: "",
+        sexo: "",
+        data_nascimento: "",
+        telefone: "",
+        morada: "",
+        // especialidade: "",
+        descricao: "",
+      },
+    };
+  },
+  methods: {
+    register() {
+      axios({
+        method: "post",
+        url: "/diaristas/register",
+        data: this.form,
+        headers: { "Content-Type": "multipart/form-data" },
+      })
+        .then(function (response) {
+          useToast().success("Registrado com sucesso!");
+          console.log(response)
+        })
+        .catch(function (response) {
+          //handle error
+          console.log(response);
+        });
+
+
+    },
+  },
+};
 </script>
 <style>
 
