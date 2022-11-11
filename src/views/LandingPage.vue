@@ -1,8 +1,102 @@
 <template>
-  <div class="landing-page">
-    <p class="lead text-center">Alguns serviços que os diaristas registados fazem</p>
-    <!-- ======= Servicos prestados ======= -->
-    <section id="featured-services" class="featured-services">
+  <!--<div class="landing-page">-->
+  <v-img>
+    <section>
+      <div class="k">
+
+      </div>
+    </section>
+    <section>
+      <div class="container">
+
+        <div class="imagem">
+          <img src="../assets/fundo.png" alt="">
+        </div>
+
+        <div class="assunto">
+
+          <section class="icons-container">
+
+            <div class="icons">
+              <h3>O que temos a oferecer</h3>
+              <p>Voce deseja ter uma diarista? Para ajudar com actividades domesticas?
+                Uma Baba Para ficar com a crianca? Uma secretaria para cuidar da tua casa?
+                podes cres estas na pagina correcta.</p>
+            </div>
+
+            <!-- Seccao com icon de user-->
+            <div class="icons">
+
+              <h3>Servicos</h3>
+              <p>Neste Site teras a oportunidade de ter varios servicos de diaristas
+                ,Neste site temos variedade de diaristas, aprecie e requisite servicos
+                de acordo com a tua nececidade </p>
+            </div>
+
+            <div class="icons">
+
+              <h3>Requisitar</h3>
+              <p>Se voce eh uma diarista cadastre-se e publique o seu perfil</p>
+            </div>
+
+            <!-- Seccao com icon de hospital-->
+            <!--<div class="icons">
+    <i class="fas fa-hospital"></i>
+    <h3>80+</h3>
+    <p>Horarios disponiveis</p>
+</div>-->
+
+          </section>
+
+        </div>
+      </div>
+    </section>
+  </v-img>
+
+
+  <section class="container">
+    <div class="assunto">
+      <section class="icons-container">
+
+        <div class="icons">
+
+          <h3>10+</h3>
+          <p>Diaristas procurando trabalho</p>
+        </div>
+
+        <!-- Seccao com icon de user-->
+        <div class="icons">
+
+          <h3>1040+</h3>
+          <p>Diaristas tem usado esse sistemas para achar trabalho</p>
+        </div>
+
+        <div class="icons">
+
+          <h3>500+</h3>
+          <p>Empregadores tem achado servicos satisfactorio </p>
+        </div>
+
+        <!-- Seccao com icon de hospital-->
+        <!--<div class="icons">
+    <i class="fas fa-hospital"></i>
+    <h3>80+</h3>
+    <p>Horarios disponiveis</p>
+</div>-->
+
+      </section>
+
+    </div>
+    <div class="imagem">
+      <img src="../assets/fundo1.png" alt="">
+    </div>
+
+  </section>
+  <!-- ======= Servicos prestados ======= -->
+
+  <!--
+         <section id="featured-services" class="featured-services">
+
       <div class="container" data-aos="fade-up">
         <div class="row">
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
@@ -58,15 +152,48 @@
           </div>
         </div>
       </div>
-    </section>
-    <!-- End Featured Services Section -->
-  </div>
+       End Featured Services Section -->
+
+
+  <!-- </div>-->
 </template>
 <script>
 export default {};
 </script>
 <style scoped>
-a {
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  transition: all .2s ease-out;
+  text-decoration: none;
+}
+
+.k {
+  width: 100%;
+  height: 100px;
+
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.imagem {}
+
+.assunto {
+
+  height: auto;
+
+}
+
+/*a {
   color: #106eea;
   text-decoration: none;
 }
@@ -106,5 +233,53 @@ featured-services .title a {
   font-size: 14px;
   line-height: 25px;
   margin-bottom: 0;
+}*/
+:root {
+  --green: #144e43;
+  --black: #444;
+  --light-color: #777;
+  --box-shadow: .5rem .5rem 0 rgba(22, 160, 133, .2);
+  --text-shadow: .4rem .4rem 0 rgba(0, 0, 0, .2);
+  --border: .2rem solid #144e43;
+}
+
+.icons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+/*Para por os icons de medicos, feeback de usuarios... em fila*/
+.icons-container .icons {
+  border: .1rem solid #144e43;
+  /*rectangulos por volta*/
+  box-shadow: .5rem .5rem 0 rgba(22, 160, 133, .2);
+  ;
+  border-radius: .5rem;
+  text-align: center;
+  padding: 2.5rem;
+}
+
+.icons-container .icons i {
+  font-size: 4.5rem;
+  color: #144e43;
+  padding-bottom: .7rem;
+}
+
+.icons-container .icons h3 {
+  font-size: 3.5rem;
+  color: #444;
+  ;
+  padding: .5rem 0;
+  text-shadow: .1rem .2rem 0 rgba(0, 0, 0, .2);
+}
+
+.icons-container .icons p {
+  font-size: 1.7rem;
+  color: #777;
+  ;
 }
 </style>
