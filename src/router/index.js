@@ -8,17 +8,17 @@ import TelaVisitante from "../views/TelaVisitante.vue";
 const routes = [
 	{
 		path: "/",
-		// name: 'home',
+		name: "Home",
 		component: LandingPage,
 	},
 	{
 		path: "/about",
-		// name: 'about',
+		name: "About",
 		component: AboutPage,
 	},
 	{
 		path: "/:pathMatch(.*)*",
-		// name: 'not-found',
+		name: "Not-found",
 		component: NotFoundPage,
 	},
 
