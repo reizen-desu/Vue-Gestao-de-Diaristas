@@ -6,9 +6,12 @@ import "vue-toastification/dist/index.css";
 
 import App from "./App.vue";
 import router from "./router";
-// import axios from "axios";
+import axios from "axios";
 import VueSweetalert2 from "vue-sweetalert2";
 import "sweetalert2/dist/sweetalert2.min.css";
+import Vuex from "vuex";
+// import { store } from "./store/index.js";
+// import Vue from "vue";
 
 // Import externall bootstrap versions
 import "./assets/styles/fontawesome.min.css";
@@ -48,6 +51,8 @@ const options = {
 const app = createApp(App);
 app.use(router);
 app.use(pinia);
+// app.use(store);
+app.use(Vuex);
 app.use(VueSweetalert2);
 app.use(Toast, options);
 app.mount("#app");
