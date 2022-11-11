@@ -48,7 +48,9 @@
   </section>
 </template>
 <script>
-import axios from 'axios'
+import axios from "axios";
+import router from "../router/index.js";
+import { useToast } from 'vue-toastification'
 
 export default {
   name: "FormLogin",
@@ -56,39 +58,51 @@ export default {
 
   data() {
     return {
-      email: null,
-      password: null,
-      error: null,
-    };
+      email: '',
+      password: '',
+    }
   },
 
   methods: {
-    login() {
+    async submit() {
 
-      // const formData = new FormData();
-      // formData.append('email', this.email);
-      // formData.append('senha', this.password);
-      // headers: {
-      //   "Content-Type": "multipart/form-data",
-      // }
+      const formData = {
+        email: this.email,
+        senha: this.password,
+      }
 
-      axios
-        .post("http://localhost:8000/api/diaristas/login", {
-          email: this.email,
-          senha: this.password,
-        })
+      const response = await axios.post('/visitantes/login', formData);
 
-        .then((response) => {
-          console.log("Logado com sucesso");
-          console.log(response);
-          this.$store.dispatch("login", response.data.data);
-        })
-        .catch((error) => {
-          console.log("Falha ao logar");
-          console.log(error);
-        });
-    },
-  },
+
+      if (response.data.message === 'Senha incorreta') {
+        useToast().error('Senha incorrecta');
+      }
+
+      if (response.data.senha === 'The senha must be at least 6 characters.') {
+        useToast().error('A senha tem que ser maior que 6 caracteres');
+      }
+
+      if (response.status === 201) {
+        useToast().success('Login efetuado com sucesso');
+        this.$emit('logged', true);
+        window.location.reload()
+        router.push('/diaristas');
+      } else {
+        useToast().error('Erro ao efetuar login');
+      }
+
+      console.log(response);
+      localStorage.setItem('token', response.data.token);
+      localStorage.setItem('visitante_id', response.data.user.id);
+      localStorage.setItem('nome', response.data.user.nome);
+      localStorage.setItem('logged', true);
+
+
+
+
+    }
+  }
+
 };
 
 </script>
