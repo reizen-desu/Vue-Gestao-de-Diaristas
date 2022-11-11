@@ -10,7 +10,7 @@
         <div class="modal-body">
           <p class="text-secondary">Preencha os campos abaixo para entrar</p>
 
-          <form id="loginForm" @submit.prevent="login">
+          <form id="loginForm" @submit.prevent="submit">
             <div class="form-floating mb-2">
               <input type="email" name="email" class="form-control" id="email" v-model="email"
                 placeholder="nome@exemplo.com" required />

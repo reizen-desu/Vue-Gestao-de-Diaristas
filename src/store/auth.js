@@ -1,5 +1,5 @@
 import axios from "axios";
-import router from "../router";
+// import router from "../router";
 
 export default {
 	namespaced: true,
@@ -24,9 +24,35 @@ export default {
 		},
 	},
 	actions: {
-		login({ commit }) {
+		async login({ dispatch }, credentials) {
+			await axios.get("/sanctum/csrf-cookie");
+			await axios.post("/visitantes/login", credentials);
+
+			return dispatch("me");
+		},
+
+		async logout({ dispatch }) {
+			await axios.post("/visitantes/logout");
+
+			return dispatch("me");
+		},
+
+		me({ commit }) {
 			return axios
-				.get("http://127.0.0.1:8000/api/visitante/profile")
+				.get("/user")
+				.then((response) => {
+					commit("SET_AUTHENTICATED", true);
+					commit("SET_USER", response.data);
+				})
+				.catch(() => {
+					commit("SET_AUTHENTICATED", false);
+					commit("SET_USER", null);
+				});
+		},
+
+		/* login({ commit }) {
+			return axios
+				.get("/visitantes/profile")
 				.then(({ data }) => {
 					commit("SET_USER", data);
 					commit("SET_AUTHENTICATED", true);
@@ -40,6 +66,6 @@ export default {
 		logout({ commit }) {
 			commit("SET_USER", {});
 			commit("SET_AUTHENTICATED", false);
-		},
+		}, */
 	},
 };

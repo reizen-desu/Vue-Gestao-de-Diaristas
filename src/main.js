@@ -17,8 +17,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
 
 // Vue.prototype.$http = axios;
-// createApp(App).use(router).mount("#app");
 
+axios.defaults.withCredentials = true;
+axios.defaults.baseURL = "http://127.0.0.1:8000/api";
+axios.defaults.headers["Authorization"] =
+	"Bearer " + localStorage.getItem("token");
+
+// Vue.use(Vuex);
 const pinia = createPinia();
 const app = createApp(App);
 app.use(router);

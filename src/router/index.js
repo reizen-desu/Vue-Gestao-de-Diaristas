@@ -24,7 +24,7 @@ const routes = [
 
 	{
 		path: "/diaristas",
-		name: "diaristas",
+		name: "Diaristas",
 		component: TelaVisitante,
 	},
 ];

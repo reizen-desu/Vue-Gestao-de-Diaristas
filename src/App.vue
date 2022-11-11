@@ -1,12 +1,14 @@
 <template>
-  <HeaderVue :logged="logged" @logout="logged = !logged" />
+  <!-- <HeaderVue :logged="!logged" @logout="logged = !logged" /> -->
+  <HeaderVue :logged="!logged" @logout="logout" />
   <!-- I can later add the bg-image class -->
   <div class="content">
     <div v-if="logged">
-      <h1>Logged in</h1>
+      <!-- <h1>Logged in</h1> -->
       <router-view />
     </div>
     <div v-else>
+
       <router-view />
     </div>
   </div>
@@ -25,10 +27,22 @@ export default {
     FooterVue,
   },
 
+  props: {
+  },
+
   data() {
     return {
-      logged: true,
+      logged: localStorage.getItem("logged") ? true : false,
     };
+  },
+
+  methods: {
+    logout() {
+      this.logged = false;
+      localStorage.clear();
+
+
+    },
   },
 };
 </script>
