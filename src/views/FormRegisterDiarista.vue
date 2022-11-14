@@ -9,7 +9,7 @@
     <div class="row">
       <div class="form-group col">
         <div class="form-floating">
-          <input type="text" class="form-control" name="nome" v-model="nome" placeholder="Nome" required />
+          <input type="text" class="form-control" name="nome" v-model="form.nome" placeholder="Nome" required />
           <label for="nome" class="form-label">Nome</label>
         </div>
         <!-- <input type="text" class="form-control" id="nome" placeholder="Introduza seu nome" pattern="[^0-9]+" required> -->
@@ -17,7 +17,8 @@
 
       <div class="form-group col">
         <div class="form-floating">
-          <input type="text" class="form-control" name="apelido" v-model="apelido" placeholder="Apelido" required />
+          <input type="text" class="form-control" name="apelido" v-model="form.apelido" placeholder="Apelido"
+            required />
           <label for="apelido" class="form-label">Apelido</label>
         </div>
         <!-- <input type="text" class="form-control" id="apelido" placeholder="Introduza seu apelido" pattern="[^0-9]+" required> -->
@@ -27,8 +28,8 @@
     <br />
 
     <div class="form-floating">
-      <input type="email" v-model="email" class="form-control" id="email_diarista" name="email"
-        placeholder="Introduza seu email" required />
+      <input type="email" v-model="form.email" class="form-control" name="email" placeholder="Introduza seu email"
+        required />
       <label for="email" class="form-label">Email</label>
     </div>
 
@@ -36,8 +37,8 @@
     <div class="row">
       <div class="form-group col">
         <label for="password_diarista">Senha</label>
-        <input type="password" v-model="senha" class="form-control" id="password_diarista" name="password_diarista"
-          placeholder="Senha" onchange="validarSenhaDiarista();" required />
+        <input type="password" v-model="form.senha" class="form-control" id="form.password_diarista"
+          name="password_diarista" placeholder="Senha" onchange="validarSenhaDiarista();" required />
       </div>
 
       <div class="form-group col">
@@ -54,12 +55,12 @@
       <!-- <label for="publicar">Sexo: </label> -->
 
       <div class="form-check form-check-inline">
-        <input class="form-check-input" v-model="sexo" type="radio" name="sexo" value="M" id="sexo1" />
+        <input class="form-check-input" v-model="form.sexo" type="radio" value="M" id="sexo1" />
         <label class="form-check-label" for="sexo1"> Masculino </label>
       </div>
 
       <div class="form-check form-check-inline">
-        <input class="form-check-input" v-model="sexo" type="radio" name="sexo" value="F" id="sexo2" />
+        <input class="form-check-input" v-model="form.sexo" type="radio" name="sexo" value="F" id="sexo2" />
         <label class="form-check-label" for="sexo2"> Feminimo </label>
       </div>
     </div>
@@ -68,7 +69,7 @@
       <label for="data_nascimento" class="col-5 col-form-label">Data de nascimento</label>
       <div class="col-6">
         <div class="input-group date">
-          <input type="date" v-model="data_nascimento" class="form-control" name="data_nascimento"
+          <input type="date" v-model="form.data_nascimento" class="form-control" name="data_nascimento"
             id="data_nascimento" />
         </div>
       </div>
@@ -76,12 +77,14 @@
 
     <div class="form-group">
       <label for="nif">Contacto</label>
-      <input type="digit" class="form-control" v-model="telefone" name="telefone" placeholder="84 0000 000" required />
+      <input type="digit" class="form-control" v-model="form.telefone" name="telefone" placeholder="84 0000 000"
+        required />
     </div>
 
     <div class="form-group">
       <label for="morada">Morada</label>
-      <input type="text" class="form-control" v-model="morada" name="morada" placeholder="Introduza o seu bairro" />
+      <input type="text" class="form-control" v-model="form.morada" name="morada"
+        placeholder="Introduza o seu bairro" />
     </div>
 
     <!-- <label for="especialidade">Escolha sua especialidade(s)</label> -->
@@ -92,7 +95,7 @@
           Especialidade
         </legend>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" value="" id="especialidade1" />
+          <input class="form-check-input" type="checkbox" value="Limpeza" v-model="form.especialidade" />
           <label class="form-check-label" data-bs-toggle="tooltip" data-bs-placement="right"
             title="Limpeza consiste em varrer os ambientes, tirar o pó e sujeiras dos imóveis, fazer limpeza de vidros, pisos, paredes e dentre outras várias."
             for="especialidade1">
@@ -100,21 +103,21 @@
           </label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" value="" id="especialidade2" />
+          <input class="form-check-input" type="checkbox" v-model="form.especialidade" value="Lavar e secar" />
           <label class="form-check-label" for="especialidade2" data-bs-toggle="tooltip"
             title="Para quem precisa de sua roupa lavada, seja por via manual ou por meio de máquina de lavar.">
             Lavar e secar
           </label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" value="" id="especialidade3" />
+          <input class="form-check-input" type="checkbox" v-model="form.especialidade" value="Baba" />
           <label class="form-check-label" for="especialidade3" data-bs-toggle="tooltip"
             title="A babá é quem fica resposável por tomar conta do bebé. É necessário um nível de responsabilidade devido.">
             Babá
           </label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" value="" id="especialidade4" />
+          <input class="form-check-input" type="checkbox" value="Colecta de lixo" v-model="form.especialidade" />
           <label class="form-check-label" for="especialidade4" data-bs-toggle="tooltip"
             title="O indivíduo colector de lixo é aquele responsável por remover o lixo acumulado de um determinado local.">
             Colecta de lixo
@@ -130,7 +133,7 @@
     <br /><br />
 
     <div class="form-floating">
-      <textarea name="descricao" v-model="descricao" cols="30" rows="10" class="form-control"></textarea>
+      <textarea name="descricao" v-model="form.descricao" cols="30" rows="10" class="form-control"></textarea>
       <label for="descricao">Breve descrição sobre você (experiência de trabalho)</label>
     </div>
 
@@ -179,7 +182,7 @@ export default {
         data_nascimento: "",
         telefone: "",
         morada: "",
-        // especialidade: "",
+        especialidade: [],
         descricao: "",
       },
     };
@@ -197,7 +200,7 @@ export default {
           console.log(response)
         })
         .catch(function (response) {
-          //handle error
+          useToast().error("Ocorreu um erro durante o registo. Confirme os dados.")
           console.log(response);
         });
 
