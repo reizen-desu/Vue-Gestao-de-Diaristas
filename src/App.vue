@@ -23,7 +23,6 @@ export default {
   name: "App",
   components: {
     HeaderVue,
-    // TelaVisitante,
     FooterVue,
   },
 
@@ -40,8 +39,6 @@ export default {
     logout() {
       this.logged = false;
       localStorage.clear();
-
-
     },
   },
 };
