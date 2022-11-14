@@ -21,7 +21,7 @@
           </li>
 
           <!-- Mostar os items de registro/login caso ainda não tenha entrado no sistema -->
-          <template v-if="logged">
+          <template v-if="!logged">
             <li class="nav-item">
               <button class="mx-2 btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#register">
                 Registar
@@ -39,7 +39,7 @@
           <template v-else>
 
             <li class="navbar-nav">
-              <router-link to="/diaristas" class="nav-link" @click="alertDiarist">Diaristas</router-link>
+              <router-link to="/diaristas" class="nav-link">Diaristas</router-link>
             </li>
             <li class="nav-item dropdown dropstart">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
@@ -92,10 +92,9 @@ export default {
   },
 
   props: {
-    logged: {
-      type: Boolean,
-    },
+    logged: Boolean,
   },
+
   methods: {
     printmessage() {
       useToast().success("Carregando as notificaçoes!", {

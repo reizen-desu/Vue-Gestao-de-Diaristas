@@ -1,10 +1,9 @@
 <template>
-  <!-- <HeaderVue :logged="!logged" @logout="logged = !logged" /> -->
-  <HeaderVue :logged="!logged" @logout="logout" />
+  <!-- <HeaderVue :logged="logged" @logout="logged = !logged" /> -->
+  <HeaderVue :logged="logged" @logout="logout" />
   <!-- I can later add the bg-image class -->
   <div class="content">
     <div v-if="logged">
-      <!-- <h1>Logged in</h1> -->
       <router-view />
     </div>
     <div v-else>
@@ -27,18 +26,21 @@ export default {
   },
 
   props: {
+
   },
 
   data() {
     return {
       logged: localStorage.getItem("logged") ? true : false,
+
     };
   },
 
   methods: {
     logout() {
-      this.logged = false;
       localStorage.clear();
+      this.logged = false;
+      console.log("Logout feito com sucesso!");
     },
   },
 };
