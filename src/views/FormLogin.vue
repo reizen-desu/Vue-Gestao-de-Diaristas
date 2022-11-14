@@ -77,8 +77,10 @@ export default {
       } else if (response.data.message === "Senha incorreta") {
         console.log(response.data);
         return useToast().error("Senha incorrecta");
-      } else if (response.data.senha === "The senha must be at least 6 characters.") {
-        return useToast().error("A senha tem que ser maior que 6 caracteres");
+      } else if (response.data.message === "The senha must be at least 6 characters.") {
+        useToast().error("A senha tem que ser maior que 6 caracteres");
+      } else {
+        console.log("erro")
       }
 
       if (response.status === 201) {
