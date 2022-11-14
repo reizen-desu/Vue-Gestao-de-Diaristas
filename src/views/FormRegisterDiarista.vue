@@ -199,9 +199,9 @@ export default {
           useToast().success("Registrado com sucesso!");
           console.log(response)
         })
-        .catch(function (response) {
+        .catch(function (error) {
           useToast().error("Ocorreu um erro durante o registo. Confirme os dados.")
-          console.log(response);
+          console.log(error);
         });
 
 
