@@ -1,176 +1,178 @@
 <template>
-  <section class="home" id="home">
-    <div class="image">
-      <img src="" alt="">
-    </div>
-  </section>
-
-  <section class="services" id="services">
-
-    <h1 class="heading"> <span>Alguns serviços que os diaristas registados fazem</span> </h1>
-
-    <div class="box-container">
-
-
-
-      <div class="box">
-
-        <h3>Limpeza Básica</h3>
-        <p>Remoção de pó e resíduos, manutenção e organização
-          dos ambientes...</p>
-        <a href="#" class="btn"> Mais <span class="fas fa-chevron-right"></span> </a>
+  <div class="about-us">
+    <section class="hero bg-primary text-white text-center py-5">
+      <div class="container">
+        <h1 class="display-4">Sobre a Empresa X</h1>
+        <p class="lead">
+          Conectando profissionais domésticos qualificados com famílias que precisam de
+          seus serviços
+        </p>
       </div>
+    </section>
 
-      <div class="box">
-
-        <h3>Faxina</h3>
-        <p>Limpeza mais detalhada dos ambientes, remoção de gordura de cozinha e
-          banheiros... </p>
-        <a href="#" class="btn"> Mais <span class="fas fa-chevron-right"></span> </a>
+    <section class="our-mission py-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <h2 class="mb-4">Nossa Missão</h2>
+            <p>
+              O sistema tem como objetivo tornar fácil a procura de uma diarista,
+              economizando tempo das pessoas que precisam de serviços domésticos e criando
+              oportunidades de trabalho para profissionais qualificados.
+            </p>
+            <p>
+              Aqui você encontra perfis de diaristas que estão à procura de um lugar para
+              realizar seus trabalhos, garantindo qualidade e confiança para ambas as
+              partes.
+            </p>
+          </div>
+          <div class="col-md-6">
+            <img src="../assets/fundo.png" alt="Nossa Missão" class="img-fluid rounded" />
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="box">
-
-        <h3>Pré mudança</h3>
-        <p>Antes de mudar para o local que você chamara de seu
-          lar. E preciso fazer ....</p>
-        <a href="#" class="btn"> Mais <span class="fas fa-chevron-right"></span> </a>
+    <section class="services bg-light py-5" id="services">
+      <div class="container">
+        <h2 class="text-center mb-5">Serviços Oferecidos pelos Nossos Diaristas</h2>
+        <div class="row">
+          <div class="col-md-6 col-lg-3 mb-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h3 class="card-title h5">Limpeza Básica</h3>
+                <p class="card-text">
+                  Remoção de pó e resíduos, manutenção e organização dos ambientes,
+                  higienização de cozinha e banheiros.
+                </p>
+                <a href="#" class="btn btn-outline-primary"
+                  >Saiba Mais <i class="fas fa-chevron-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 mb-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h3 class="card-title h5">Faxina</h3>
+                <p class="card-text">
+                  Limpeza mais detalhada dos ambientes, remoção de gordura de cozinha e
+                  banheiros, limpeza de vidros e janelas.
+                </p>
+                <a href="#" class="btn btn-outline-primary"
+                  >Saiba Mais <i class="fas fa-chevron-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 mb-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h3 class="card-title h5">Pré-mudança</h3>
+                <p class="card-text">
+                  Limpeza minuciosa antes de mudar para um novo lar, remoção de poeira e
+                  sujeira acumulada, preparação do ambiente.
+                </p>
+                <a href="#" class="btn btn-outline-primary"
+                  >Saiba Mais <i class="fas fa-chevron-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 mb-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h3 class="card-title h5">Pós-Obra</h3>
+                <p class="card-text">
+                  Limpeza especializada após reformas ou construções, remoção de resíduos
+                  de obra, limpeza profunda de todos os ambientes.
+                </p>
+                <a href="#" class="btn btn-outline-primary"
+                  >Saiba Mais <i class="fas fa-chevron-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="box">
-
-        <h3>Pós Obra</h3>
-        <p> Acabou de realizar a tão sonhada obra? Mudou aquele cantinho que a muito
-          você queria...</p>
-        <a href="#" class="btn"> Mais <span class="fas fa-chevron-right"></span> </a>
+    <section class="why-choose-us py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">Por que escolher a Empresa X?</h2>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="text-center">
+              <i class="fas fa-user-check fa-3x mb-3 text-primary"></i>
+              <h3 class="h5">Profissionais Verificados</h3>
+              <p>
+                Todos os nossos diaristas passam por um rigoroso processo de verificação
+                de antecedentes.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="text-center">
+              <i class="fas fa-calendar-check fa-3x mb-3 text-primary"></i>
+              <h3 class="h5">Agendamento Flexível</h3>
+              <p>
+                Escolha o horário que melhor se adapta à sua rotina, com opções de
+                agendamento recorrente.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="text-center">
+              <i class="fas fa-hand-holding-usd fa-3x mb-3 text-primary"></i>
+              <h3 class="h5">Preços Competitivos</h3>
+              <p>
+                Oferecemos serviços de qualidade a preços justos, tanto para clientes
+                quanto para profissionais.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-
-    </div>
-
-  </section>
-  <!--<h4>
-    O sistema tem como objectivo tornar fácil a procura de uma diarista, assim
-    economizando tempo das pessoas que procuram por uma diarista e criar oportunidades de
-    trabalho.
-    <br /><br />
-    Aqui você encontra perfis de diaristas que estão a procura de um lugar para fazer seus
-    trabalhos.
-  </h4>-->
+    </section>
+  </div>
 </template>
+
 <script>
-export default {};
+export default {
+  name: "AboutUs",
+  // Add any necessary component logic here
+};
 </script>
+
 <style scoped>
-:root {
-  --green: #144e43;
-  --black: #444;
-  --light-color: #777;
-  --box-shadow: .5rem .5rem 0 rgba(22, 160, 133, .2);
-  --text-shadow: .4rem .4rem 0 rgba(0, 0, 0, .2);
-  --border: .2rem solid var(--green);
+.hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../assets/fundo1.png");
+  background-size: cover;
+  background-position: center;
 }
 
-* {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  outline: none;
-  border: none;
-  text-transform: capitalize;
-  transition: all .2s ease-out;
-  text-decoration: none;
+.card {
+  transition: transform 0.3s ease-in-out;
 }
 
-.services .box-container {
-  /*Organizar em modo grid rectangolos de servicos*/
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  gap: 3rem;
-  /*Tamanho dos rectangolos de servicos*/
+.card:hover {
+  transform: translateY(-5px);
 }
 
-.services .box-container .box {
-  background: #fff;
-  border-radius: .5rem;
-  box-shadow: .5rem .5rem 0 rgba(22, 160, 133, .2);
-  border: .2rem solid #144e43;
-  padding: 5.0rem;
+.btn-outline-primary {
+  color: var(--bs-primary);
+  border-color: var(--bs-primary);
 }
 
-.services .box-container .box i {
-  color: #144e43;
-  ;
-  font-size: 5rem;
-  padding-bottom: .5rem;
+.btn-outline-primary:hover {
+  color: white;
+  background-color: var(--bs-primary);
 }
 
-.services .box-container .box h3 {
-  color: #444;
-  font-size: 2.5rem;
-  padding: 1rem 0;
+.fas {
+  color: var(--bs-primary);
 }
 
-.services .box-container .box p {
-  color: #777;
-  font-size: 1.2rem;
-  line-height: 2;
-}
-
-.btn {
-  display: inline-block;
-  border: .2rem solid #144e43;
-  border-radius: .5rem;
-  box-shadow: .5rem .5rem 0 rgba(22, 160, 133, .2);
-  color: #144e43;
-  cursor: pointer;
-  font-size: 1rem;
-  background: #fff;
-}
-
-.btn span {
-  padding: .5rem;
-  border-radius: .5rem;
-  background: #144e43;
-  color: #fff;
-
-}
-
-/*Para por fundo verde ao passar o cursor no botao agendar*/
-.btn:hover {
-  background: #144e43;
-  color: #fff;
-}
-
-.btn:hover span {
-  color: #144e43;
-  background: #fff;
-
-}
-
-html {
-  font-size: 62.5%;
-  overflow-x: hidden;
-  scroll-padding-top: 7rem;
-  scroll-behavior: smooth;
-}
-
-section {
-  padding: 2rem;
-}
-
-/*Para abrir o espaco entre os icons*/
-section:nth-child(even) {
-  background: #f5f5f5;
-}
-
-/*h4 {
-  line-height: 1.2;
-  color: #212529;
-  text-align: center;
-  margin: 0;
-  padding: 40px;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}*/
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
 </style>

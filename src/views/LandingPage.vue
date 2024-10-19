@@ -1,285 +1,173 @@
 <template>
-  <!--<div class="landing-page">-->
-  <v-img>
-    <section>
-      <div class="k">
-
-      </div>
-    </section>
-    <section>
-      <div class="container">
-
-        <div class="imagem">
-          <img src="../assets/fundo.png" alt="">
+  <div class="landing-page">
+    <!-- Main Content -->
+    <main>
+      <section class="hero bg-primary text-white text-center py-5">
+        <div class="container">
+          <h1 class="display-4">Encontre o profissional ideal para sua casa</h1>
+          <p class="lead">
+            Conectamos você com empregadas domésticas, babás, cozinheiras e muito mais!
+          </p>
+          <a href="#contact" class="btn btn-light btn-lg mt-3">Entre em contato</a>
         </div>
-
-        <div class="assunto">
-
-          <section class="icons-container">
-
-            <div class="icons">
-              <h3>O que temos a oferecer</h3>
-              <p>Voce deseja ter uma diarista? Para ajudar com actividades domesticas?
-                Uma Baba Para ficar com a crianca? Uma secretaria para cuidar da tua casa?
-                podes cres estas na pagina correcta.</p>
-            </div>
-
-            <!-- Seccao com icon de user-->
-            <div class="icons">
-
-              <h3>Servicos</h3>
-              <p>Neste Site teras a oportunidade de ter varios servicos de diaristas
-                ,Neste site temos variedade de diaristas, aprecie e requisite servicos
-                de acordo com a tua nececidade </p>
-            </div>
-
-            <div class="icons">
-
-              <h3>Requisitar</h3>
-              <p>Se voce eh uma diarista cadastre-se e publique o seu perfil</p>
-            </div>
-
-            <!-- Seccao com icon de hospital-->
-            <!--<div class="icons">
-    <i class="fas fa-hospital"></i>
-    <h3>80+</h3>
-    <p>Horarios disponiveis</p>
-</div>-->
-
-          </section>
-
-        </div>
-      </div>
-    </section>
-  </v-img>
-
-
-  <section class="container">
-    <div class="assunto">
-      <section class="icons-container">
-
-        <div class="icons">
-
-          <h3>10+</h3>
-          <p>Diaristas procurando trabalho</p>
-        </div>
-
-        <!-- Seccao com icon de user-->
-        <div class="icons">
-
-          <h3>1040+</h3>
-          <p>Diaristas tem usado esse sistemas para achar trabalho</p>
-        </div>
-
-        <div class="icons">
-
-          <h3>500+</h3>
-          <p>Empregadores tem achado servicos satisfactorio </p>
-        </div>
-
-        <!-- Seccao com icon de hospital-->
-        <!--<div class="icons">
-    <i class="fas fa-hospital"></i>
-    <h3>80+</h3>
-    <p>Horarios disponiveis</p>
-</div>-->
-
       </section>
 
-    </div>
-    <div class="imagem">
-      <img src="../assets/fundo1.png" alt="">
-    </div>
-
-  </section>
-  <!-- ======= Servicos prestados ======= -->
-
-  <!--
-         <section id="featured-services" class="featured-services">
-
-      <div class="container" data-aos="fade-up">
-        <div class="row">
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-              <div class="icon"><i class="bx bxl-dribbble"></i></div>
-              <h4 class="title"><a href="">Limpeza Básica</a></h4>
-              <p class="description">
-                Remoção de pó e resíduos, manutenção e organização dos ambientes,
-                higienização seca ou molhada de cozinha e banheiros.
-              </p>
+      <section id="services" class="py-5">
+        <div class="container">
+          <h2 class="text-center mb-5">Nossos Serviços</h2>
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title">Empregadas Domésticas</h5>
+                  <p class="card-text">
+                    Profissionais experientes para cuidar da sua casa.
+                  </p>
+                </div>
+              </div>
             </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-              <div class="icon"><i class="bx bx-file"></i></div>
-              <h4 class="title"><a href="">Pré mudança</a></h4>
-              <p class="description">
-                Antes de mudar para o local que você chamara de seu lar. E preciso fazer
-                uma limpeza minuciosa, retirando a poeira, sujeira causados pelo tempo que
-                o local se encontrava vazio. Retirar gordura ou resíduos deixados por uso
-                anterior do local, você pode contar com a Faxina da Hora, pois temos
-                profissionais dedicados e com destreza para o serviço.
-              </p>
+            <div class="col-md-4 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title">Babás</h5>
+                  <p class="card-text">Cuidadoras qualificadas para seus filhos.</p>
+                </div>
+              </div>
             </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-              <div class="icon"><i class="bx bx-tachometer"></i></div>
-              <h4 class="title"><a href="">Pós Obra</a></h4>
-              <p class="description">
-                Acabou de realizar a tão sonhada obra? Mudou aquele cantinho que a muito
-                você queria deixar bonito? E agora precisa de algum que cuide dos detalhes
-                da limpeza, removendo toda a poeira e deixando tudo brilhado. Pode contar
-                com a gente, disponibilizamos profissionais ou equipes especializadas para
-                você não se preocupar com a limpeza.
-              </p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-              <div class="icon"><i class="bx bx-world"></i></div>
-              <h4 class="title"><a href="">Faxina</a></h4>
-              <p class="description">
-                Limpeza mais detalhada dos ambientes, remoção de gordura de cozinha e
-                banheiros, nesse serviço a um esforço e empenho de tempo maior por parte
-                da profissional, e sempre bom que você informe a profissional qual será a
-                sua demanda maior para que a mesma comece por esse ambiente.
-              </p>
+            <div class="col-md-4 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title">Cozinheiras</h5>
+                  <p class="card-text">
+                    Profissionais para preparar refeições deliciosas.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-       End Featured Services Section -->
+      </section>
 
+      <section id="features" class="py-5 bg-light">
+        <div class="container">
+          <h2 class="text-center mb-5">Nossas Vantagens</h2>
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <div class="text-center">
+                <i class="fas fa-phone-alt fa-3x mb-3 text-primary"></i>
+                <h4>Atendimento via Call Center</h4>
+                <p>
+                  Nossos atendentes estão prontos para ajudar você a encontrar o
+                  profissional ideal.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="text-center">
+                <i class="fas fa-user-check fa-3x mb-3 text-primary"></i>
+                <h4>Perfis Detalhados</h4>
+                <p>
+                  Visualize experiência, habilidades e avaliações de cada profissional.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="text-center">
+                <i class="fas fa-clipboard-list fa-3x mb-3 text-primary"></i>
+                <h4>Cadastro de Profissionais</h4>
+                <p>Trabalhadores podem se cadastrar diretamente em nossa plataforma.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-  <!-- </div>-->
+      <section id="contact" class="bg-primary text-white py-5">
+        <div class="container">
+          <h2 class="text-center mb-4">Entre em Contato</h2>
+          <div class="row justify-content-center">
+            <div class="col-md-6">
+              <form>
+                <div class="mb-3">
+                  <input type="text" class="form-control" placeholder="Seu nome" />
+                </div>
+                <div class="mb-3">
+                  <input type="email" class="form-control" placeholder="Seu e-mail" />
+                </div>
+                <div class="mb-3">
+                  <textarea
+                    class="form-control"
+                    rows="3"
+                    placeholder="Sua mensagem"
+                  ></textarea>
+                </div>
+                <button type="submit" class="btn btn-light">Enviar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <FormRegister />
+  <FormLogin />
 </template>
+
 <script>
-export default {};
+import FormRegister from "./FormRegister.vue";
+import FormLogin from "./FormLogin.vue";
+import { useToast } from "vue-toastification";
+
+export default {
+  name: "LandingPage",
+  components: {
+    FormRegister,
+    FormLogin,
+  },
+  props: {
+    logged: Boolean,
+  },
+  methods: {
+    printmessage() {
+      useToast().success("Carregando as notificaçoes!", {
+        position: "bottom-left",
+        duration: 1000,
+        theme: "bubble",
+        action: {
+          text: "X",
+          onClick: (e, toastObject) => {
+            toastObject.goAway(0);
+          },
+        },
+      });
+    },
+  },
+};
 </script>
+
 <style scoped>
-* {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  outline: none;
-  border: none;
-  text-transform: capitalize;
-  transition: all .2s ease-out;
-  text-decoration: none;
+.hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../assets/fundo1.png");
+  background-size: cover;
+  background-position: center;
 }
 
-.k {
-  width: 100%;
-  height: 100px;
-
+nav {
+  box-shadow: 0px 2px 1.5px rgba(0, 0, 0, 0.013), 0px 5px 2.4px rgba(0, 0, 0, 0.024),
+    0px 9px 5px rgba(0, 0, 0, 0.04);
 }
 
-.container {
-  display: flex;
-  flex-direction: row;
-
+#nav-logo {
+  border-radius: 20px 20px 0px;
+  box-shadow: 5px 9px 10px 1px rgba(0, 0, 0, 0.9);
 }
 
-.imagem {}
-
-.assunto {
-
-  height: auto;
-
+footer {
+  background-color: black;
 }
 
-/*a {
-  color: #106eea;
-  text-decoration: none;
-}
-
-div {
-  font-family: "Open Sans", sans-serif;
-}
-
-.landing-page {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans",
-    "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol", "Noto Color Emoji";
-}
-
-.featured-services .icon-box {
-  padding: 30px;
-  position: relative;
-  overflow: hidden;
-  background: #fff;
-  box-shadow: 0 0 29px 0 rgb(68 88 144 / 12%);
-  transition: all 0.3s ease-in-out;
-  border-radius: 8px;
-  z-index: 1;
-}
-.featured-services title {
-  font-family: "Roboto", sans-serif;
-  font-weight: 700;
-  margin-bottom: 15px;
-  font-size: 18px;
-}
-
-featured-services .title a {
-  color: #111;
-}
-
-.featured-services .description {
-  font-size: 14px;
-  line-height: 25px;
-  margin-bottom: 0;
-}*/
-:root {
-  --green: #144e43;
-  --black: #444;
-  --light-color: #777;
-  --box-shadow: .5rem .5rem 0 rgba(22, 160, 133, .2);
-  --text-shadow: .4rem .4rem 0 rgba(0, 0, 0, .2);
-  --border: .2rem solid #144e43;
-}
-
-.icons-container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-}
-
-/*Para por os icons de medicos, feeback de usuarios... em fila*/
-.icons-container .icons {
-  border: .1rem solid #144e43;
-  /*rectangulos por volta*/
-  box-shadow: .5rem .5rem 0 rgba(22, 160, 133, .2);
-  ;
-  border-radius: .5rem;
-  text-align: center;
-  padding: 2.5rem;
-}
-
-.icons-container .icons i {
-  font-size: 4.5rem;
-  color: #144e43;
-  padding-bottom: .7rem;
-}
-
-.icons-container .icons h3 {
-  font-size: 3.5rem;
-  color: #444;
-  ;
-  padding: .5rem 0;
-  text-shadow: .1rem .2rem 0 rgba(0, 0, 0, .2);
-}
-
-.icons-container .icons p {
-  font-size: 1.7rem;
-  color: #777;
-  ;
-}
+/* Fix for FontAwesome icons */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
 </style>
