@@ -2,7 +2,7 @@
   <div class="about-us">
     <section class="hero bg-primary text-white text-center py-5">
       <div class="container">
-        <h1 class="display-4">Sobre a Empresa X</h1>
+        <h1 class="display-4">Sobre a Amal Agency</h1>
         <p class="lead">
           Conectando profissionais domésticos qualificados com famílias que precisam de
           seus serviços
@@ -99,7 +99,7 @@
 
     <section class="why-choose-us py-5">
       <div class="container">
-        <h2 class="text-center mb-5">Por que escolher a Empresa X?</h2>
+        <h2 class="text-center mb-5">Por que escolher a Amal Agency?</h2>
         <div class="row">
           <div class="col-md-4 mb-4">
             <div class="text-center">
